@@ -12,7 +12,7 @@ const inputCountry = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-document.body.style.backgroundColor = '#f1f2f3';
+document.body.style.backgroundColor = '#dfe0dd';
 
 const clear = () => {
   countryInfo.innerHTML = '';
@@ -50,6 +50,8 @@ const searchCountry = event => {
     });
 };
 
+//Showing list of country's
+
 const renderCountryList = country => {
   const elementShow = country
     .map(({ name, flags }) => {
@@ -63,6 +65,8 @@ const renderCountryList = country => {
 
   countryList.innerHTML = elementShow;
 };
+
+//Detail country info
 
 const renderCountryInfo = country => {
   const elementShow = country
