@@ -25,6 +25,7 @@ const searchCountry = event => {
     clear();
     return;
   }
+
   fetchCountries(findCountry)
     .then(country => {
       if (country.length > 10) {
@@ -49,18 +50,20 @@ const searchCountry = event => {
     });
 };
 
-//==========RENDERING 1 COUNTRY=========================
 const renderCountryList = country => {
   const markup = country
     .map(({ name, flags }) => {
-      return `<li><img src="${flags.svg}" alt="${name.official}" width="200" height="120"><p><b>${name.official}</b></p></li>`;
+      return `
+      <li>
+      <img src="${flags.svg}" alt="${name.official}" width="200" height="120">
+      <p><b>${name.official}</b></p>
+      </li>`;
     })
     .join('');
 
   countryList.innerHTML = markup;
 };
 
-//=========RENDERING 10 OR LESS COUNTRIES=================
 const renderCountryInfo = country => {
   const markup = country
     .map(({ name, capital, population, flags, languages }) => {
