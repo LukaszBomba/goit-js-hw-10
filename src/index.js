@@ -51,7 +51,7 @@ const searchCountry = event => {
 };
 
 const renderCountryList = country => {
-  const markup = country
+  const elementShow = country
     .map(({ name, flags }) => {
       return `
       <li>
@@ -61,11 +61,11 @@ const renderCountryList = country => {
     })
     .join('');
 
-  countryList.innerHTML = markup;
+  countryList.innerHTML = elementShow;
 };
 
 const renderCountryInfo = country => {
-  const markup = country
+  const elementShow = country
     .map(({ name, capital, population, flags, languages }) => {
       return `<section>
         
@@ -83,7 +83,7 @@ const renderCountryInfo = country => {
     })
     .join('');
 
-  countryInfo.innerHTML = markup;
+  countryInfo.innerHTML = elementShow;
 };
 
 inputCountry.addEventListener('input', debounce(searchCountry, DEBOUNCE_DELAY));
